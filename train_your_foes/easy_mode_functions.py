@@ -27,3 +27,6 @@ def print_rules_easy():
     print("\t5. if the batsman is out, roles are switched")
     print("tip - if input is asked, copy paste exact string as shown by print statement")
 
+def load_weights_and_biases():
+    with open("model_weights.json", 'r') as weights:
+        pass
