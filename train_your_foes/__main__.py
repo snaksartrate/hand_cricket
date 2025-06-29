@@ -12,10 +12,10 @@ while mode not in ('e', 'm', 'h'):
 
 if mode == 'e':
     print("easy mode")
-    subprocess.run([sys.executable, "easy.py", no_of_overs])
+    subprocess.run([sys.executable, "_easy.py", no_of_overs])
 elif mode == 'm':
     print("medium mode")
-    subprocess.run([sys.executable, "medium.py", no_of_overs])
+    subprocess.run([sys.executable, "_medium.py", no_of_overs])
 else:
     print("hard mode")
-    subprocess.run([sys.executable, "hard.py", no_of_overs])
+    subprocess.run([sys.executable, "_hard.py", no_of_overs])
