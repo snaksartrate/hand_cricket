@@ -1,6 +1,13 @@
 import numpy as np
 import json
 
+def LeakyReLU(x):
+    return np.where(x >= 0, x, 0.01 * x)
+
+def softmax(x):
+    exps = np.exp(x - np.max(x))
+    return exps / np.sum(exps)
+
 def compute_easy_bats():
     pass
 
