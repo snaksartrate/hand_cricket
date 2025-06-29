@@ -2,9 +2,10 @@ import numpy as np
 import json
 import functions_mode_easy
 import neural_networks
+import sys
 
 toss_winner, toss_winners_choice = functions_mode_easy.toss()
-
+no_of_overs = sys.argv[1]
 weight_bias_dictionary = []
 
 with open("weights_easy.json", 'r') as w:

@@ -18,7 +18,7 @@ def toss():
     else:
         return let_computer_choose()
 
-def print_rules_medium():
+def print_rules():
     print("rules:")
     print("\t1. batsman is allowed to play one of these values \{0, 1, 2, 4, 6\}")
     print("\t2. each one of these values represents a the amount of runs scored on that turn")
@@ -27,3 +27,8 @@ def print_rules_medium():
     print("\t5. if the batsman is out, roles are switched")
     print("tip - if input is asked, copy paste exact string as shown by print statement")
 
+def load_weights():
+    pass
+
+def save_weights():
+    pass
