@@ -3,7 +3,7 @@ import json
 import functions_mode_medium
 import sys
 
-no_of_overs = sys.argv[1]
+no_of_overs = int(sys.argv[1])
 
 toss_winner, toss_winners_choice = functions_mode_medium.toss()
 if (toss_winner == 'computer won' and toss_winners_choice == 'bat') or (toss_winner == 'human won' and toss_winners_choice == 'bowl'):

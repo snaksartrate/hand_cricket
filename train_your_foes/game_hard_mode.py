@@ -2,7 +2,7 @@ import numpy as np
 import json
 import sys
 
-no_of_overs = sys.argv[1]
+no_of_overs = int(sys.argv[1])
 
 def let_computer_choose_hard():
     l = ('bat', 'bowl') # change to a function that returns the choice based off of previous data, which means, if computer had a higher win percentage when he chose either option, go for it, random otherwise

@@ -5,13 +5,13 @@ import neural_networks
 import sys
 
 toss_winner, toss_winners_choice = functions_mode_easy.toss()
-no_of_overs = sys.argv[1]
-weight_bias_dictionary = []
+no_of_overs = int(sys.argv[1])
+weight_bias_list = []
 
 with open("weights_easy.json", 'r') as w:
     if (toss_winner == 'computer won' and toss_winners_choice == 'bat') or (toss_winner == 'human won' and toss_winners_choice == 'bowl'):
         # activate NN for computer bats
-        weight_bias_dictionary = json.load(w)
+        weight_bias_list = json.load(w)
     else:
         # activate NN for computer bowls
         pass

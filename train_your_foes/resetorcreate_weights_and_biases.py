@@ -22,17 +22,21 @@ bias_1to2_hard = np.zeros(32)
 bias_2to3_hard = np.zeros(16)
 
 # Define your weights and biases
-weights_biases = {
+weights_biases_easy = {
     "weights_0to1_easy": weights_0to1_easy.tolist(),
     "weights_1to2_easy": weights_1to2_easy.tolist(),
     "bias_0to1_easy": bias_0to1_easy.tolist(),
     "bias_1to2_easy": bias_1to2_easy.tolist(),
+}
 
+weights_biases_medium = {
     "weights_0to1_medium": weights_0to1_medium.tolist(),
     "weights_1to2_medium": weights_1to2_medium.tolist(),
     "bias_0to1_medium": bias_0to1_medium.tolist(),
     "bias_1to2_medium": bias_1to2_medium.tolist(),
+}
 
+weights_biases_hard = {
     "weights_0to1_hard": weights_0to1_hard.tolist(),
     "weights_1to2_hard": weights_1to2_hard.tolist(),
     "weights_2to3_hard": weights_2to3_hard.tolist(),
@@ -42,14 +46,18 @@ weights_biases = {
 }
 
 # Save to JSON
-with open("model_weights.json", "w") as f:
-    json.dump(weights_biases, f, indent=4)
+# with open("model_weights_easy.json", "w") as f:
+#     json.dump(weights_biases_easy, f, indent=4)
+# with open("model_weights_medium.json", "w") as f:
+#     json.dump(weights_biases_medium, f, indent=4)
+# with open("model_weights_hard.json", "w") as f:
+#     json.dump(weights_biases_hard, f, indent=4)
 
 runs_easy = (1, 2, 4, 6)
 runs_medium = (0, 1, 2, 4, 6)
 runs_hard = (0, 1, 2, 3, 4, 5, 6)
 
-def load_model_weights(filename):
-    with open(filename, "r") as f:
-        data = json.load(f)
-    return {key: np.array(val) for key, val in data.items()}
+# def load_model_weights(filename):
+#     with open(filename, "r") as f:
+#         data = json.load(f)
+#     return {key: np.array(val) for key, val in data.items()}

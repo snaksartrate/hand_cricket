@@ -28,7 +28,20 @@ def print_rules():
     print("tip - if input is asked, copy paste exact string as shown by print statement")
 
 def load_weights():
-    pass
+    with open("model_weights_medium.json", 'r') as w:
+        weights = json.load(w)
+        w_0to1 = np.array(weights["weights_0to1_medium"])
+        w_1to2 = np.array(weights["weights_1to2_medium"])
+        b_0to1 = np.array(weights["bias_0to1_medium"])
+        b_1to2 = np.array(weights["bias_1to2_medium"])
+        return w_0to1, w_1to2, b_0to1, b_1to2
 
-def save_weights():
-    pass
+def save_weights(w_0to1, w_1to2, b_0to1, b_1to2):
+    weights = {
+        "weights_0to1_medium" : w_0to1.tolist(),
+        "weights_1to2_medium" : w_1to2.tolist(),
+        "bias_0to1_medium" : b_0to1.tolist(),
+        "bias_1to2_medium" : b_1to2.tolist()
+    }
+    with open("model_weights_medium.json", 'w') as w:
+        json.dump(weights, w, indent=4)
