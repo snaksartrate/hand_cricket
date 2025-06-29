@@ -8,13 +8,25 @@ def softmax(x):
     exps = np.exp(x - np.max(x))
     return exps / np.sum(exps)
 
-def compute_easy(ip, w0, w1, w2, b0, b1, b2):
+def compute_easy_bats(ip, w0, w1, w2, b0, b1, b2):
     l1 = leaky_relu(ip @ w0 + b0)
     l2 = leaky_relu(l1 @ w1 + b1)
     op = softmax(l2 @ w2 + b2)
     return (1, 2, 4, 6)[np.argmax(op)]
 
-def compute_medium(ip, w0, w1, w2, b0, b1, b2):
+def compute_easy_bowls(ip, w0, w1, w2, b0, b1, b2):
+    l1 = leaky_relu(ip @ w0 + b0)
+    l2 = leaky_relu(l1 @ w1 + b1)
+    op = softmax(l2 @ w2 + b2)
+    return (1, 2, 4, 6)[np.argmax(op)]
+
+def compute_medium_bats(ip, w0, w1, w2, b0, b1, b2):
+    l1 = leaky_relu(ip @ w0 + b0)
+    l2 = leaky_relu(l1 @ w1 + b1)
+    op = softmax(l2 @ w2 + b2)
+    return (0, 1, 2, 4, 6)[np.argmax(op)]
+
+def compute_medium_bowls(ip, w0, w1, w2, b0, b1, b2):
     l1 = leaky_relu(ip @ w0 + b0)
     l2 = leaky_relu(l1 @ w1 + b1)
     op = softmax(l2 @ w2 + b2)

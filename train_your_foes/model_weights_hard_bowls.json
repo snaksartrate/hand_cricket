@@ -1,5 +1,5 @@
 {
-    "weights_0to1_hard": [
+    "weights_0to1_hard_bowls": [
         [
             1.0,
             1.0,
@@ -2905,7 +2905,7 @@
             1.0
         ]
     ],
-    "weights_1to2_hard": [
+    "weights_1to2_hard_bowls": [
         [
             1.0,
             1.0,
@@ -5083,7 +5083,7 @@
             1.0
         ]
     ],
-    "weights_2to3_hard": [
+    "weights_2to3_hard_bowls": [
         [
             1.0,
             1.0,
@@ -5661,7 +5661,7 @@
             1.0
         ]
     ],
-    "weights_3to4_hard": [
+    "weights_3to4_hard_bowls": [
         [
             1.0,
             1.0,
@@ -5807,7 +5807,7 @@
             1.0
         ]
     ],
-    "bias_0to1_hard": [
+    "bias_0to1_hard_bowls": [
         0.0,
         0.0,
         0.0,
@@ -5873,7 +5873,7 @@
         0.0,
         0.0
     ],
-    "bias_1to2_hard": [
+    "bias_1to2_hard_bowls": [
         0.0,
         0.0,
         0.0,
@@ -5907,7 +5907,7 @@
         0.0,
         0.0
     ],
-    "bias_2to3_hard": [
+    "bias_2to3_hard_bowls": [
         0.0,
         0.0,
         0.0,
@@ -5925,7 +5925,7 @@
         0.0,
         0.0
     ],
-    "bias_3to4_hard": [
+    "bias_3to4_hard_bowls": [
         0.0,
         0.0,
         0.0,

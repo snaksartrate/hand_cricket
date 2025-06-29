@@ -1,5 +1,5 @@
 {
-    "weights_0to1_medium": [
+    "weights_0to1_medium_bowls": [
         [
             1.0,
             1.0,
@@ -545,7 +545,7 @@
             1.0
         ]
     ],
-    "weights_1to2_medium": [
+    "weights_1to2_medium_bowls": [
         [
             1.0,
             1.0,
@@ -1123,7 +1123,7 @@
             1.0
         ]
     ],
-    "weights_2to3_medium": [
+    "weights_2to3_medium_bowls": [
         [
             1.0,
             1.0,
@@ -1237,7 +1237,7 @@
             1.0
         ]
     ],
-    "bias_0to1_medium": [
+    "bias_0to1_medium_bowls": [
         0.0,
         0.0,
         0.0,
@@ -1271,7 +1271,7 @@
         0.0,
         0.0
     ],
-    "bias_1to2_medium": [
+    "bias_1to2_medium_bowls": [
         0.0,
         0.0,
         0.0,
@@ -1289,7 +1289,7 @@
         0.0,
         0.0
     ],
-    "bias_2to3_medium": [
+    "bias_2to3_medium_bowls": [
         0.0,
         0.0,
         0.0,

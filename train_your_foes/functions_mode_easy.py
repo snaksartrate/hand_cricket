@@ -3,8 +3,7 @@ import json
 import neural_networks
 
 def let_computer_choose():
-    l = ('bat', 'bowl')
-    return 'computer won', l[int(np.random.rand * 2)]
+    return 'computer won', ('bat', 'bowl')[int(np.random.rand * 2)]
 
 def toss():
     h = input("enter h/t: ")
@@ -28,28 +27,51 @@ def print_rules():
     print("\t5. if the batsman is out, roles are switched")
     print("tip - if input is asked, copy paste exact string as shown by print statement")
 
-def load_weights():
-    with open("model_weights_easy.json", 'r') as w:
+def load_weights_bats():
+    with open("model_weights_easy_bats.json", 'r') as w:
         weights = json.load(w)
-        w_0to1 = np.array(weights["weights_0to1_easy"])
-        w_1to2 = np.array(weights["weights_1to2_easy"])
-        w_2to3 = np.array(weights["weights_2to3_easy"])
-        b_0to1 = np.array(weights["bias_0to1_easy"])
-        b_1to2 = np.array(weights["bias_1to2_easy"])
-        b_2to3 = np.array(weights["bias_2to3_easy"])
+        w_0to1 = np.array(weights["weights_0to1_easy_bats"])
+        w_1to2 = np.array(weights["weights_1to2_easy_bats"])
+        w_2to3 = np.array(weights["weights_2to3_easy_bats"])
+        b_0to1 = np.array(weights["bias_0to1_easy_bats"])
+        b_1to2 = np.array(weights["bias_1to2_easy_bats"])
+        b_2to3 = np.array(weights["bias_2to3_easy_bats"])
         return w_0to1, w_1to2, w_2to3, b_0to1, b_1to2, b_2to3
 
-def forward_prop(ip, w0, w1, w2, b0, b1, b2):
-    return neural_networks.compute_easy(ip, w0, w1, w2, b0, b1, b2)
+def load_weights_bowls():
+    with open("model_weights_easy_bowls.json", 'r') as w:
+        weights = json.load(w)
+        w_0to1 = np.array(weights["weights_0to1_easy_bowls"])
+        w_1to2 = np.array(weights["weights_1to2_easy_bowls"])
+        w_2to3 = np.array(weights["weights_2to3_easy_bowls"])
+        b_0to1 = np.array(weights["bias_0to1_easy_bowls"])
+        b_1to2 = np.array(weights["bias_1to2_easy_bowls"])
+        b_2to3 = np.array(weights["bias_2to3_easy_bowls"])
+        return w_0to1, w_1to2, w_2to3, b_0to1, b_1to2, b_2to3
 
-def save_weights(w_0to1, w_1to2, w_2to3, b_0to1, b_1to2, b_2to3):
+def forward_prop(ip, w0, w1, w2, b0, b1, b2, status):
+    return neural_networks.compute_easy_bats(ip, w0, w1, w2, b0, b1, b2) if status == 'bats' else neural_networks.compute_easy_bowls(ip, w0, w1, w2, b0, b1, b2)
+
+def save_weights_bats(w_0to1, w_1to2, w_2to3, b_0to1, b_1to2, b_2to3):
     weights = {
-        "weights_0to1_easy" : w_0to1.tolist(),
-        "weights_1to2_easy" : w_1to2.tolist(),
-        "weights_2to3_easy" : w_2to3.tolist(),
-        "bias_0to1_easy" : b_0to1.tolist(),
-        "bias_1to2_easy" : b_1to2.tolist(),
-        "bias_2to3_easy" : b_2to3.tolist()
+        "weights_0to1_easy_bats" : w_0to1.tolist(),
+        "weights_1to2_easy_bats" : w_1to2.tolist(),
+        "weights_2to3_easy_bats" : w_2to3.tolist(),
+        "bias_0to1_easy_bats" : b_0to1.tolist(),
+        "bias_1to2_easy_bats" : b_1to2.tolist(),
+        "bias_2to3_easy_bats" : b_2to3.tolist()
     }
-    with open("model_weights_easy.json", 'w') as w:
+    with open("model_weights_easy_bats.json", 'w') as w:
+        json.dump(weights, w, indent=4)
+
+def save_weights_bowls(w_0to1, w_1to2, w_2to3, b_0to1, b_1to2, b_2to3):
+    weights = {
+        "weights_0to1_easy_bowls" : w_0to1.tolist(),
+        "weights_1to2_easy_bowls" : w_1to2.tolist(),
+        "weights_2to3_easy_bowls" : w_2to3.tolist(),
+        "bias_0to1_easy_bowls" : b_0to1.tolist(),
+        "bias_1to2_easy_bowls" : b_1to2.tolist(),
+        "bias_2to3_easy_bowls" : b_2to3.tolist()
+    }
+    with open("model_weights_easy_bowls.json", 'w') as w:
         json.dump(weights, w, indent=4)
