@@ -7,42 +7,54 @@ input_hard = np.zeros(44) # 15 moves of each, alternate, next 10 cells represent
 
 weights_0to1_easy = np.ones((7,16))
 weights_1to2_easy = np.ones((16,8))
+weights_2to3_easy = np.ones((8,4))
 weights_0to1_medium = np.ones((16,32))
 weights_1to2_medium = np.ones((32,16))
+weights_2to3_medium = np.ones((16,5))
 weights_0to1_hard = np.ones((44,64))
 weights_1to2_hard = np.ones((64,32))
 weights_2to3_hard = np.ones((32,16))
+weights_3to4_hard = np.ones((16,7))
 
 bias_0to1_easy = np.zeros(16)
 bias_1to2_easy = np.zeros(8)
+bias_2to3_easy = np.zeros(4)
 bias_0to1_medium = np.zeros(32)
 bias_1to2_medium = np.zeros(16)
+bias_2to3_medium = np.zeros(5)
 bias_0to1_hard = np.zeros(64)
 bias_1to2_hard = np.zeros(32)
 bias_2to3_hard = np.zeros(16)
+bias_3to4_hard = np.zeros(7)
 
 # Define your weights and biases
 weights_biases_easy = {
-    "weights_0to1_easy": weights_0to1_easy.tolist(),
-    "weights_1to2_easy": weights_1to2_easy.tolist(),
-    "bias_0to1_easy": bias_0to1_easy.tolist(),
-    "bias_1to2_easy": bias_1to2_easy.tolist(),
+    "weights_0to1_easy" : weights_0to1_easy.tolist(),
+    "weights_1to2_easy" : weights_1to2_easy.tolist(),
+    "weights_2to3_easy" : weights_2to3_easy.tolist(),
+    "bias_0to1_easy" : bias_0to1_easy.tolist(),
+    "bias_1to2_easy" : bias_1to2_easy.tolist(),
+    "bias_2to3_easy" : bias_2to3_easy.tolist()
 }
 
 weights_biases_medium = {
     "weights_0to1_medium": weights_0to1_medium.tolist(),
     "weights_1to2_medium": weights_1to2_medium.tolist(),
+    "weights_2to3_medium": weights_2to3_medium.tolist(),
     "bias_0to1_medium": bias_0to1_medium.tolist(),
     "bias_1to2_medium": bias_1to2_medium.tolist(),
+    "bias_2to3_medium": bias_2to3_medium.tolist()
 }
 
 weights_biases_hard = {
     "weights_0to1_hard": weights_0to1_hard.tolist(),
     "weights_1to2_hard": weights_1to2_hard.tolist(),
     "weights_2to3_hard": weights_2to3_hard.tolist(),
+    "weights_3to4_hard": weights_3to4_hard.tolist(),
     "bias_0to1_hard": bias_0to1_hard.tolist(),
     "bias_1to2_hard": bias_1to2_hard.tolist(),
     "bias_2to3_hard": bias_2to3_hard.tolist(),
+    "bias_3to4_hard": bias_3to4_hard.tolist()
 }
 
 # Save to JSON

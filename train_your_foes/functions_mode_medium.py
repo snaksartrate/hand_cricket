@@ -1,5 +1,6 @@
 import numpy as np
 import json
+import neural_networks
 
 def let_computer_choose():
     l = ('bat', 'bowl')
@@ -32,16 +33,23 @@ def load_weights():
         weights = json.load(w)
         w_0to1 = np.array(weights["weights_0to1_medium"])
         w_1to2 = np.array(weights["weights_1to2_medium"])
+        w_2to3 = np.array(weights["weights_2to3_medium"])
         b_0to1 = np.array(weights["bias_0to1_medium"])
         b_1to2 = np.array(weights["bias_1to2_medium"])
-        return w_0to1, w_1to2, b_0to1, b_1to2
+        b_2to3 = np.array(weights["bias_2to3_medium"])
+        return w_0to1, w_1to2, w_2to3, b_0to1, b_1to2, b_2to3
 
-def save_weights(w_0to1, w_1to2, b_0to1, b_1to2):
+def forward_prop(ip, w0, w1, w2, b0, b1, b2):
+    return neural_networks.compute_easy(ip, w0, w1, w2, b0, b1, b2)
+
+def save_weights(w_0to1, w_1to2, w_2to3, b_0to1, b_1to2, b_2to3):
     weights = {
         "weights_0to1_medium" : w_0to1.tolist(),
         "weights_1to2_medium" : w_1to2.tolist(),
+        "weights_2to3_medium" : w_2to3.tolist(),
         "bias_0to1_medium" : b_0to1.tolist(),
-        "bias_1to2_medium" : b_1to2.tolist()
+        "bias_1to2_medium" : b_1to2.tolist(),
+        "bias_2to3_medium" : b_2to3.tolist()
     }
     with open("model_weights_medium.json", 'w') as w:
         json.dump(weights, w, indent=4)

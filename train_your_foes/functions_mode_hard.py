@@ -32,16 +32,24 @@ def load_weights():
         weights = json.load(w)
         w_0to1 = np.array(weights["weights_0to1_hard"])
         w_1to2 = np.array(weights["weights_1to2_hard"])
+        w_2to3 = np.array(weights["weights_2to3_hard"])
+        w_3to4 = np.array(weights["weights_3to4_hard"])
         b_0to1 = np.array(weights["bias_0to1_hard"])
         b_1to2 = np.array(weights["bias_1to2_hard"])
-        return w_0to1, w_1to2, b_0to1, b_1to2
+        b_2to3 = np.array(weights["bias_2to3_hard"])
+        b_3to4 = np.array(weights["bias_3to4_hard"])
+        return w_0to1, w_1to2, w_2to3, w_3to4, b_0to1, b_1to2, b_2to3, b_3to4
 
-def save_weights(w_0to1, w_1to2, b_0to1, b_1to2):
+def save_weights(w_0to1, w_1to2, w_2to3, w_3to4, b_0to1, b_1to2, b_2to3, b_3to4):
     weights = {
         "weights_0to1_hard" : w_0to1.tolist(),
         "weights_1to2_hard" : w_1to2.tolist(),
+        "weights_2to3_hard" : w_2to3.tolist(),
+        "weights_3to4_hard" : w_3to4.tolist(),
         "bias_0to1_hard" : b_0to1.tolist(),
-        "bias_1to2_hard" : b_1to2.tolist()
+        "bias_1to2_hard" : b_1to2.tolist(),
+        "bias_2to3_hard" : b_2to3.tolist(),
+        "bias_3to4_hard" : b_3to4.tolist()
     }
     with open("model_weights_hard.json", 'w') as w:
         json.dump(weights, w, indent=4)
