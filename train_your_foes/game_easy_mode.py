@@ -1,10 +1,9 @@
 import numpy as np
 import json
-import easy_mode_functions
+import functions_mode_easy
 import neural_networks
 
-toss_winner, toss_winners_choice = easy_mode_functions.toss()
-player_role_matrix = (('bat', 'bowl'), ('bowl', 'bat'))
+toss_winner, toss_winners_choice = functions_mode_easy.toss()
 
 weight_bias_dictionary = []
 
